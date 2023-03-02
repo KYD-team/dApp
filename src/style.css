@@ -1,0 +1,54 @@
+@import url('https://rsms.me/inter/inter.css');
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  font-family: inter;
+  background: #2a1152;
+}
+
+.side-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #FFFFFF;
+  color: #2a1152;
+  padding: 20px;
+  overflow: auto;
+  flex-direction: column;
+  display: none;
+}
+
+.side-panel.open {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  padding: 20px 30px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.chainSelect:hover {
+  color: grey;
+  transform: scale(1.4);
+}
+
+.chain-name {
+  border-bottom: 2px solid black;
+  width: 150px;
+  padding-bottom: 12px;
+}

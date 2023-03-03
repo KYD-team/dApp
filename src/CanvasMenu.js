@@ -5,8 +5,6 @@ import { useGLTF, Html, OrbitControls, Environment, ContactShadows, Effects, Tex
 import { FaAdn, FaBandcamp } from 'react-icons/fa'
 import { WaterPass, GlitchPass } from 'three-stdlib'
 
-import { avalanche, binance } from './mock';
-
 extend({ WaterPass, GlitchPass })
 
 function Model({togglePanel, setSelectedChain, ...props}) {

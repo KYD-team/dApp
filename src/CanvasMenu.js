@@ -5,13 +5,19 @@ import { useGLTF, Html, OrbitControls, Environment, ContactShadows, Effects, Tex
 import { FaAdn, FaBandcamp } from 'react-icons/fa'
 import { WaterPass, GlitchPass } from 'three-stdlib'
 
+import ava from './media/ava.svg'
+import sol from './media/sol.svg'
+import bsscan from './media/bsscan.svg'
+import eth from './media/eth.svg'
+
 extend({ WaterPass, GlitchPass })
 
 function Model({togglePanel, setSelectedChain, ...props}) {
   const chainStyle = { 
     color: '#ffffff',
     position: 'absolute',
-    fontSize: 10,
+    fontSize: 30,
+    top: 10,
     letterSpacing: -0.5,
     left: 17.5,
     cursour: 'pointer',
@@ -27,12 +33,32 @@ function Model({togglePanel, setSelectedChain, ...props}) {
       <mesh>
         <sphereGeometry />
         <meshStandardMaterial color="#9c7ccf" />
-        <Word handleClick={handleClick} position={[0, 1.8, 0]}>
-          Binance
+         {/* <Word handleClick={handleClick} position={[0, 0, 2.5]}>
+          Solscan
         </Word>
-        <Word handleClick={handleClick} position={[0, 0, 2]} >
-          Snowtrace
+        <Word handleClick={handleClick} position={[0, 0, 1]}>
+          Polyscan
+        </Word> */}
+        <Word handleClick={()=>handleClick('Etherscan')} position={[1.3, 0, -1.3]}>
+          Etherscan
+          <Html position={[0.3, 0.2, 0]} style={chainStyle}>
+            <img style={{width: '36px', height: '36px'}} src={eth} />
+          </Html>
         </Word>
+        <Word handleClick={()=>handleClick('Bscscan')} position={[0, 2, 0]}>
+          Bscscan
+          <Html position={[0.3, 0.2, 0]} style={chainStyle}>
+            <img style={{width: '36px', height: '36px'}} src={bsscan} />
+          </Html>
+        </Word>
+        <group position={[0, 0, 0]}>
+          <Word handleClick={()=>handleClick('Snowtrace')} position={[0, 0, 2]} >
+            Snowtrace
+            <Html position={[0.3, 0.2, 0]} style={chainStyle}>
+              <img style={{width: '36px', height: '36px'}} src={ava} />
+            </Html>
+          </Word>
+        </group>
       </mesh>
     </group>
   )
@@ -40,7 +66,12 @@ function Model({togglePanel, setSelectedChain, ...props}) {
 
 function Word({ handleClick, children, ...props }) {
   const color = new THREE.Color()
-  const fontProps = { fontSize: 0.3, letterSpacing: -0.05, lineHeight: 0.5, 'material-toneMapped': false }
+  const fontProps = {
+    fontSize: 0.19,
+    letterSpacing: -0.05,
+    lineHeight: 0.5,
+    'material-toneMapped': false
+  }
   const ref = useRef()
   const [hovered, setHovered] = useState(false)
   const over = (e) => (e.stopPropagation(), setHovered(true))
@@ -87,7 +118,7 @@ function Postpro() {
 
 export default function CanvasMenu({togglePanel, setSelectedChain}) {
   return (
-    <Canvas style={{height: '300px', marginLeft: '100px'}} camera={{ position: [5, 0, 0], fov: 50 }}>
+    <Canvas style={{height: '390px', marginLeft: '100px', top: '-31px', width: '96%'}} camera={{ position: [5, 0, 0], fov: 50 }}>
       <ambientLight intensity={0.6} />
       <Model
         setSelectedChain={setSelectedChain}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import LineChart from './LineChart'
-import { COMMIT_CONTRIBUTION_FRAGMENT } from '../queries/fragments'
+// import { COMMIT_CONTRIBUTION_FRAGMENT } from '../queries/fragments'
 
 const GITHUB_USER_INFO_QUERY = gql`
   query ($username: String!) {
@@ -74,6 +74,8 @@ const GITHUB_USER_INFO_QUERY = gql`
 `
 
 const GithubUserInfo = ({ username }) => {
+  console.log("username")
+  console.log(username)
   const { loading, error, data } = useQuery(GITHUB_USER_INFO_QUERY, {
     variables: { username },
   })

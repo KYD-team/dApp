@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DeveloperWidget from './DeveloperWidget'
 
 export default function ListRespos(
   {
@@ -77,11 +78,11 @@ export default function ListRespos(
       </div>
     )
   })
-
+  console.log({entity})
   return (
     <div className="list">
       {!isProfile && renderList}
-      {isProfile && renderProfileDev()}
+      {isProfile && <DeveloperWidget username={entity} />}
     </div>
   );
 }

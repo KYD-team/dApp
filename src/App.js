@@ -5,6 +5,8 @@ import {
   CHAIN_NAMESPACES,
 } from "@web3auth/base";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
+import { ApolloProvider } from '@apollo/client';
+
 import Dashboard from "./Dashboard";
 import "./App.css";
 import RPC from "./web3RPC"; // for using web3.js

@@ -25,6 +25,9 @@ export default function Dashboard (){
   const [selectedChain, setSelectedChain] = useState({});
   const [selectedEntity, setSelectedEntity] = useState(null);
 
+  console.log("selectedChain")
+  console.log(map[selectedChain])
+
   const title = (
     <div className='headline'>
       <h1>Know Your Developer</h1>

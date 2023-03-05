@@ -1,6 +1,7 @@
 import { reposAva, commitsAva, reposAvaTest, commitsAvaTest } from './ava';
 import { commitsPoly, reposPoly } from './poly';
 import { commitsEth, reposEth } from './eth';
+import { commitsBn, reposBn } from './bn';
 
 export const avalanche = {
   repos: reposAva,
@@ -23,8 +24,8 @@ export const avalanche = {
 };
 
 export const binance = {
-  repos: {},
-  commit: {},
+  repos: reposBn,
+  commit: commitsBn,
   reposTest: {},
   commitsTest: {},
   title: 'Binance Smart Chain',

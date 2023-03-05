@@ -236,7 +236,7 @@ h2 {
   align-items: center;
   margin-bottom: 20px;
   height: 100vh;
-  width: 300px;
+  width: 321px;
   height: 95vh;
   padding: 10px;
 }
@@ -298,6 +298,7 @@ input {
   margin-top: 20px;
   padding: 8px;
   width: 100px;
+  cursor: pointer;
 }
 .button__claim {
   color: white;
@@ -307,6 +308,7 @@ input {
   padding: 8px;
   width: 100px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .info {

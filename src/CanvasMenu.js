@@ -34,12 +34,6 @@ function Model({togglePanel, setSelectedChain, ...props}) {
       <mesh>
         <sphereGeometry />
         <meshStandardMaterial color="#9c7ccf" />
-         <Word handleClick={()=>handleClick('Solscan')} position={[0, 1.3, -1.5]}>
-          Solscan
-          <Html position={[0.3, 0.2, 0]} style={chainStyle}>
-            <img style={{width: '36px', height: '36px'}} src={sol} />
-          </Html>
-        </Word>
         <Word handleClick={()=>handleClick('Polyscan')} position={[0, 1.8, 1.8]}>
           Polyscan
           <Html position={[0.3, 0.2, 0]} style={chainStyle}>

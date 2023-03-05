@@ -44,7 +44,6 @@ export default function Dashboard (){
   
   return (
     <div className="dashboard">
-      <Nav />
       <SidePanel
         setSelectedEntity={setSelectedEntity}
         chain={map[selectedChain]}

@@ -6,6 +6,7 @@ import Card from './Card';
 import StatsPanel from './StatsPanel';
 import ProfilePanel from './ProfilePanel';
 import Search from './Search';
+import Reviews from './Reviews';
 
 export {
   SidePanel,
@@ -16,4 +17,5 @@ export {
   Stats,
   Card,
   Search,
+  Reviews,
 }

@@ -28,7 +28,7 @@ export default function ProfilePanel(
           }
           onClick={() => setSelectedTab('orgs')}>Organizations</span>
       </div>
-      <Search />
+      {!selectedEntity && <Search />}
       <List
         selectedEntity={selectedEntity}
         setSelectedEntity={setSelectedEntity}

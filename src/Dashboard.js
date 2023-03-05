@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import CanvasMenu from './CanvasMenu';
 import {
   SidePanel,
-  Nav,
+  Reviews,
   StatsPanel,
   ProfilePanel
 } from './components';
@@ -22,8 +22,6 @@ export default function Dashboard (){
   const [isOpen, togglePanel] = useState(false);
   const [selectedChain, setSelectedChain] = useState({});
   const [selectedEntity, setSelectedEntity] = useState(null);
-
-  console.log(StatsPanel)
 
   const title = (
     <div className='headline'>
@@ -73,7 +71,8 @@ export default function Dashboard (){
         style={ccStyle}
       >
         {!isOpen && title}
-        {isOpen && <StatsPanel chain={map[selectedChain]} />}
+        {isOpen && !selectedEntity && <StatsPanel chain={map[selectedChain]} />}
+        {isOpen && selectedEntity && <Reviews />}
         <CanvasMenu
           isOpen={isOpen}
           togglePanel={togglePanel}

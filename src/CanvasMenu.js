@@ -7,6 +7,7 @@ import { WaterPass, GlitchPass } from 'three-stdlib'
 
 import ava from './media/ava.svg'
 import sol from './media/sol.svg'
+import poly from './media/poly.svg'
 import bsscan from './media/bsscan.svg'
 import eth from './media/eth.svg'
 
@@ -33,26 +34,32 @@ function Model({togglePanel, setSelectedChain, ...props}) {
       <mesh>
         <sphereGeometry />
         <meshStandardMaterial color="#9c7ccf" />
-         {/* <Word handleClick={handleClick} position={[0, 0, 2.5]}>
+         <Word handleClick={()=>handleClick('Solscan')} position={[0, 1.3, -1.5]}>
           Solscan
+          <Html position={[0.3, 0.2, 0]} style={chainStyle}>
+            <img style={{width: '36px', height: '36px'}} src={sol} />
+          </Html>
         </Word>
-        <Word handleClick={handleClick} position={[0, 0, 1]}>
+        <Word handleClick={()=>handleClick('Polyscan')} position={[0, 1.8, 1.8]}>
           Polyscan
-        </Word> */}
-        <Word handleClick={()=>handleClick('Etherscan')} position={[1.3, 0, -1.3]}>
+          <Html position={[0.3, 0.2, 0]} style={chainStyle}>
+            <img style={{width: '36px', height: '36px'}} src={poly} />
+          </Html>
+        </Word>
+        <Word handleClick={()=>handleClick('Etherscan')} position={[1, 0.5, -1.5]}>
           Etherscan
           <Html position={[0.3, 0.2, 0]} style={chainStyle}>
             <img style={{width: '36px', height: '36px'}} src={eth} />
           </Html>
         </Word>
-        <Word handleClick={()=>handleClick('Bscscan')} position={[0, 2, 0]}>
+        <Word handleClick={()=>handleClick('Bscscan')} position={[0.1, 2, 0]}>
           Bscscan
           <Html position={[0.3, 0.2, 0]} style={chainStyle}>
             <img style={{width: '36px', height: '36px'}} src={bsscan} />
           </Html>
         </Word>
-        <group position={[0, 0, 0]}>
-          <Word handleClick={()=>handleClick('Snowtrace')} position={[0, 0, 2]} >
+        <group position={[0.7, 0.9, 2]}>
+          <Word handleClick={()=>handleClick('Snowtrace')} position={[0, 0, 0]} >
             Snowtrace
             <Html position={[0.3, 0.2, 0]} style={chainStyle}>
               <img style={{width: '36px', height: '36px'}} src={ava} />

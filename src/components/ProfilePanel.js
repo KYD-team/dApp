@@ -12,7 +12,14 @@ export default function ProfilePanel(
   }
 ){
   const [selectedTab, setSelectedTab] = useState('users')
-  const combinedData = {...chainObj?.repos, ...chainObj?.reposTest}
+  let combinedData = {...chainObj?.repos}
+  
+  if (Object.keys(chainObj?.reposTest).length) {
+    combinedData = {
+      ...combinedData,
+      ...chainObj.reposTest
+    }
+  }
 
   return (
     <div className='sidepanel-profile'>

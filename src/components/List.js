@@ -11,7 +11,6 @@ export default function ListRespos(
   const [isProfile, setIsProfile] = useState(false)
   
   const handleNameClick = (name) => {
-    console.log("nameClick")
     setSelectedEntity(name)
     setIsProfile(true)
   }

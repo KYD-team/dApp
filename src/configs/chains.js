@@ -1,4 +1,6 @@
 import { reposAva, commitsAva, reposAvaTest, commitsAvaTest } from './ava';
+import { commitsPoly, reposPoly } from './poly';
+import { commitsEth, reposEth } from './eth';
 
 export const avalanche = {
   repos: reposAva,
@@ -41,8 +43,8 @@ export const binance = {
 };
 
 export const eth = {
-  repos: {},
-  commit: {},
+  repos: reposEth,
+  commit: commitsEth,
   reposTest: {},
   commitsTest: {},
   title: 'Ethereum',
@@ -61,8 +63,8 @@ export const eth = {
 };
 
 export const poly = {
-  repos: {},
-  commit: {},
+  repos: reposPoly,
+  commit: commitsPoly,
   reposTest: {},
   commitsTest: {},
   title: 'Polygon',

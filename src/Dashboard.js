@@ -8,6 +8,8 @@ import {
   StatsPanel,
   ProfilePanel
 } from './components';
+import Performance from './components/Performance';
+
 import { avalanche, binance, eth, poly, sol } from './configs/chains';
 
 const map = {
@@ -43,8 +45,6 @@ export default function Dashboard (){
   const profileClass = classNames({'nav-tab':true, 'selected':selectedEntity})
   const chainClass = classNames({'nav-tab':true, 'selected': !selectedEntity})
 
-  console.log("profileClass")
-  console.log(profileClass)
   return (
     <div className="dashboard">
       <div className='flex'>

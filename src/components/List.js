@@ -15,31 +15,48 @@ export default function ListRespos(
     setIsProfile(true)
   }
 
-  const renderProfileDev = (data) => {
-    const {
-      owner,
-      owenerUrl
-    } = data;
+  const renderProfileDev = () => {
+    // const {
+    //   owner,
+    //   owenerUrl
+    // } = data;
 
     return (
-      <div>
+      <div className='profile__container'>
         <h1>Profile</h1>
         <div className="profile">
           <div className="profile__image">
-            <img src={owenerUrl} alt="profile" />
-             <button>Follow</button>
-            <div>{owner}</div>
+            {/* <img src={owenerUrl} alt="profile" /> */}
+             <button className='button__follow'>Follow</button>
+            <div className="profile__name">name</div>
           </div>
           <div className="profile__info">
-            <div>Followers</div>
-            <div>Repositiories</div>
-            <div>Contributions</div>
-            <div>Commits</div>
-            <div>Pull Requests</div>
+            <div className='flex'>
+              <div className='info'>
+                <div className='info__label'>Followers</div>
+                <div className='info__value'>1</div>
+              </div>
+              <div className='info'>
+                <div className='info__label'>Repositiories</div>
+                <div className='info__value'>1</div>
+              </div>
+            </div>
+            <div className='info'>
+              <div className='info__label'>Contributions</div>
+              <div className='info__value'>1</div>
+            </div>
+            <div className='info'>
+              <div className='info__label'>Commits</div>
+              <div className='info__value'>1</div>
+            </div>
+            <div className='info'>
+              <div className='info__label'>Pull Requests</div>
+              <div className='info__value'>1</div>
+            </div>
             <div>Funded Projects</div>
             <h3>Near</h3>
             <div>Likes</div><div>Ideas</div>
-            <button>Review</button>
+            <button className='button__review'>Review</button>
           </div>
         </div>
       </div>
@@ -50,18 +67,21 @@ export default function ListRespos(
     return a.owner.toLowerCase() > b.owner.toLowerCase() ? 1 : -1
   })
 
+  const renderList = sorted?.map((item, index) => {
+    return (
+      <div
+        key={index}
+        className="list__name"
+        onClick={() => handleNameClick(item.owner)}>
+          {item.owner}
+      </div>
+    )
+  })
+
   return (
     <div className="list">
-      {sorted?.map((item, index) => {
-        return (
-          <div
-            key={index}
-            className="list__name"
-            onClick={() => handleNameClick(item.owner)}>
-              {item.owner}
-          </div>
-        )
-      })}
+      {!isProfile && renderList}
+      {isProfile && renderProfileDev()}
     </div>
   );
 }

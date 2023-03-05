@@ -74,14 +74,20 @@ const GITHUB_USER_INFO_QUERY = gql`
 `
 
 const GithubUserInfo = ({ username }) => {
-  console.log("username")
-  console.log(username)
   const { loading, error, data } = useQuery(GITHUB_USER_INFO_QUERY, {
     variables: { username },
   })
 
+  console.log("error")
+  console.log(error)
   if (loading) return <div>Loading...</div>
   if (error) return <div>Error</div>
+  if (!data || !data.user) return null // check existence of data
+
+
+  console.log("data")
+  console.log(data)
+
   if (!data || !data.user) return null // check existence of data
 
   console.log('la data', data)

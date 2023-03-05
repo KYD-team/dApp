@@ -289,9 +289,24 @@ input {
 }
 
 .button__follow {
+  color: white;
   border: 1px solid #05CD99;
   border-radius: 4px;
   background-color: black;
+  margin-right: 15px;
+  margin-left: 35px;
+  margin-top: 20px;
+  padding: 8px;
+  width: 100px;
+}
+.button__claim {
+  color: white;
+  border: 1px solid #bd66ec;
+  border-radius: 4px;
+  background-color: rgb(37, 3, 38);
+  padding: 8px;
+  width: 100px;
+  margin-top: 20px;
 }
 
 .info {

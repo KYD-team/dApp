@@ -136,20 +136,11 @@ const GithubUserInfo = ({ username }) => {
         src={`
           https://near.social/#/embed/eb53ec39ee209676105891c095fcde81fde9671d3155e92da2486c2f6c080c9d/widget/ProfileDev?avatarUrl=${avatarUrl}&login=${login}&followers=${followers.totalCount || 0}&repositories=${repositories.totalCount}&pullRequests=${pullRequests.totalCount}&following=${following.totalCount}&contributions=${contributionsCollection.totalCommitContributions || 0}`}>
       </iframe>
-      <LineChart data={commitsData} />
+      <div className="flex">
+        <button className="button__follow">Follow + </button>
+        <button className="button__claim">Claim</button>
+      </div>
     </>
-    // <div style={{ color: ' #fff' }}>
-    //   <img src={avatarUrl} alt="avatar" />
-    //   <h2>{login}</h2>
-    //   <p>Followers: {followers.totalCount}</p>
-    //   <p>Following: {following.totalCount}</p>
-    //   <p>Repositories: {repositories.totalCount}</p>
-    //   <p>Contributions: {contributionsCollection.totalCommitContributions}</p>
-    //   <p>Pull Requests: {pullRequests.totalCount}</p>
-    //   {/* <p>Funded Projects: {projects.totalCount}</p> */}
-    //   <p>Organization: {organizations.nodes[0]?.name || 'None'}</p>
-    //   <LineChart data={commitsData} />
-    // </div>
   )
 }
 export default GithubUserInfo

@@ -33,7 +33,12 @@ export default function ListRespos(
   return (
     <div className="list">
       {!selectedEntity && renderList}
-      {selectedEntity && <DeveloperWidget username={selectedEntity} />}
+      {selectedEntity && 
+      (<>
+      <DeveloperWidget username={selectedEntity} />
+      </>
+      
+    )}
     </div>
   );
 }

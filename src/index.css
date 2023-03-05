@@ -29,10 +29,10 @@ code {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 234px;
   background: #030303;
   color: #ffffff;
-  padding: 25px 5px 25px 25px;
+  padding: 93px 5px 25px 25px;
   overflow: auto;
   flex-direction: column;
   display: none;
@@ -264,7 +264,7 @@ h2 {
 }
 
 .headline {
-  max-width: 560px;
+  max-width: 446px;
 }
 
 .search {
@@ -316,7 +316,7 @@ input {
 .connect {
   justify-content: flex-end;
   display: flex;
-  padding: 20px;
+  padding: 15px;
 }
 
 .connect button {
@@ -324,7 +324,25 @@ input {
   border-radius: 10px;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 7px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.nav-tabs {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 287px;
+  position: relative;
+  top: -49px;
+  cursor: pointer;
+}
+
+.nav-tab:hover {
+  cursor: pointer;
+  color: #8682d7;
+}
+.nav-tab.selected {
+  color: #6761E9;
 }

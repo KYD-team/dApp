@@ -6,10 +6,11 @@ import classNames from 'classnames';
 
 export default function ProfilePanel(
   {
+    setSelectedEntity,
+    selectedEntity,
     chainObj = {}
   }
 ){
-  const [selectedEntity, setSelectedEntity] = useState(null)
   const [selectedTab, setSelectedTab] = useState('users')
   const combinedData = {...chainObj?.repos, ...chainObj?.reposTest}
 
@@ -29,6 +30,7 @@ export default function ProfilePanel(
       </div>
       <Search />
       <List
+        selectedEntity={selectedEntity}
         setSelectedEntity={setSelectedEntity}
         data={combinedData[selectedTab]}
       />

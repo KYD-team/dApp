@@ -26,10 +26,6 @@ export default function SidePanel({
       <br></br>
       <StatsWidget title="Teams" count={repos?.orgs?.length} />
       <StatsWidget title="Developers" count={repos?.users?.length} />
-      <div className="stats-section">
-        <h4>Contracts Deployed</h4>
-        <Card />
-      </div>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import classNames from 'classnames';
 
 import CanvasMenu from './CanvasMenu';
 import {
@@ -20,7 +21,7 @@ const map = {
 export default function Dashboard (){
   const [isOpen, togglePanel] = useState(false);
   const [selectedChain, setSelectedChain] = useState({});
-  const [selectedEntity, setSelectedEntity] = useState({});
+  const [selectedEntity, setSelectedEntity] = useState(null);
 
   console.log(StatsPanel)
 
@@ -36,31 +37,54 @@ export default function Dashboard (){
     marginTop: 150,
   }
   const ccStyleOpen ={
-    marginLeft: 340,
+    marginLeft: 280,
     marginTop: 0,
   }
 
   const ccStyle = isOpen ? ccStyleOpen : ccStyleClosed;
-  
+  const profileClass = classNames({'nav-tab':true, 'selected':selectedEntity})
+  const chainClass = classNames({'nav-tab':true, 'selected': !selectedEntity})
+
+  console.log("profileClass")
+  console.log(profileClass)
   return (
     <div className="dashboard">
-      <SidePanel
-        setSelectedEntity={setSelectedEntity}
-        chain={map[selectedChain]}
-        isOpen={isOpen}
-      />
+      <div className='flex'>
+        <SidePanel
+          chain={map[selectedChain]}
+          isOpen={isOpen}
+        />
+        {isOpen && (
+          <div className='nav-tabs'>
+            <div style={{paddingRight: "20px"}} onClick={()=> togglePanel(false)} className='nav-tab'>Home</div> 
+            &gt;
+            <div style={{paddingLeft: "20px", paddingRight: "20px"}} onClick={()=> setSelectedEntity(null)} className={chainClass}>{selectedChain}</div> 
+            {selectedEntity && (
+              <>
+                &gt;
+                <div style={{paddingLeft: "20px"}} className={profileClass}>{selectedEntity}</div> 
+              </>
+            )}
+          </div>
+        )}
+       </div>
       <div
         className='canvas__container'
         style={ccStyle}
       >
         {!isOpen && title}
-        {isOpen && <StatsPanel/>}
+        {isOpen && <StatsPanel chain={map[selectedChain]} />}
         <CanvasMenu
           isOpen={isOpen}
           togglePanel={togglePanel}
           setSelectedChain={setSelectedChain}
         />
-         {isOpen && <ProfilePanel chainObj={map[selectedChain]} />}
+         {isOpen && (
+          <ProfilePanel
+            selectedEntity={selectedEntity}
+            setSelectedEntity={setSelectedEntity}
+            chainObj={map[selectedChain]} />
+        )}
       </div>
     </div>
   );

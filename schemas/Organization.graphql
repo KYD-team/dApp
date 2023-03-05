@@ -1,0 +1,12 @@
+type Developer {
+  firstName: String! @string(maxLength: 100)
+  lastName: String! @string(maxLength: 100)
+  email: String! @string(maxLength: 100)
+}
+
+type Organization @createModel(accountRelation: LIST, description: "An organization on the platform") {
+  name: String! @string(maxLength: 100)
+  description: String! @string(maxLength: 500)
+  website: String! @string(maxLength: 100)
+  developers: [Developer!] @list(maxLength: 100)
+}

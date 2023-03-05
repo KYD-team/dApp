@@ -1,0 +1,5 @@
+type Developer @createModel(accountRelation: LIST, description: "A developer on the platform") {
+  firstName: String! @string(maxLength: 100)
+  lastName: String! @string(maxLength: 100)
+  email: String! @string(maxLength: 100)
+}

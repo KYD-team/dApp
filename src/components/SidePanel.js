@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import Card from './Card'
 import classNames from 'classnames';
 
 import StatsWidget from './StatsWidget';
 
-export default function SidePanel({isOpen, chain = {}}) { 
+export default function SidePanel({
+  isOpen,
+  chain = {},
+}) { 
   const {title, description, explorerName, repos = {}} = chain;
+  
   const panelClass = classNames({
     'side-panel': true,
     'open': isOpen,
@@ -22,6 +26,10 @@ export default function SidePanel({isOpen, chain = {}}) {
       <br></br>
       <StatsWidget title="Teams" count={repos?.orgs?.length} />
       <StatsWidget title="Developers" count={repos?.users?.length} />
+      <div className="stats-section">
+        <h4>Contracts Deployed</h4>
+        <Card />
+      </div>
     </div>
   )
 }

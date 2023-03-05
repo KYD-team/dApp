@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://rsms.me/inter/inter.css');
+
+#root {
+  font-family: inter;
+  background: #2a1152;
+  height: 100vh;
+  width: 100vw;
+}
+
+.side-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #030303;
+  color: #ffffff;
+  padding: 25px 5px 25px 25px;
+  overflow: auto;
+  flex-direction: column;
+  display: none;
+}
+
+.side-panel.open {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  padding: 10px 30px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0px;
+  color: #FFFFFF;
+}
+
+.chainSelect:hover {
+  color: grey;
+  transform: scale(1.4);
+}
+
+.chain-name {
+  margin-top: 5px;
+  border-bottom: 4px solid #6761E9;
+  width: 150px;
+  padding-bottom: 12px;
+}
+
+.app {
+  background-image: url('./media/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas__container {
+  display: flex;
+  color: #FFFFFF;
+}
+
+.canvas__container span {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+}
+.canvas__container h1 {
+  font-size: 64px;
+  margin-bottom: 5px;font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  line-height: 73px;
+  letter-spacing: -0.02em;
+}
+
+.stat span {
+  color: #8F9BBA;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+}
+
+.stat h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.card {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
+  /* identical to box height, or 184% */
+  
+  letter-spacing: -0.02em;
+}
+
+.card__header {
+  color: #8F9BBA;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 2px solid #141414;
+}
+
+table, th, tr, td {
+  border: none;
+}
+
+th, td {
+  padding: 12px;
+}
+
+.stats-widget {
+  border-left: #6761E9 4px solid;
+  border-bottom: #6761E9 4px solid;
+  width: 182px;
+  height: 66px;
+  padding: 20px 20px 10px;
+  margin-bottom: 30px;
+}
+
+.stats-widget:hover {
+  border-left: #a09bf0 4px solid;
+  border-bottom: #a09bf0 4px solid;
+  cursor: pointer;
+}
+
+.stats-panel {
+  border-color: #141414;
+  border-radius: 3px;
+  background: black;
+  width: 440px;
+  min-height: 794px;  
+  padding: 15px;
+}
+
+.stats-panel h4 {
+  font-size: 18px;
+  text-align: left;
+  margin-left: 12px;
+}
+
+table {
+  margin-bottom: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
+}
+
+td {
+  text-align: center;
+}
+
+.card__header {
+
+}
+
+h4, h3, h2 {
+  margin: 0px;
+}
+
+h2 {
+   margin-top: 5px;
+}
+
+.list__name:hover {
+  color: grey;
+  transform: scale(1.4);
+}
+
+.flex { display: flex; }
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.tabs span {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 10px !important;
+  margin-right: 5px;
+  cursor: pointer;
+  border-bottom: 4px solid black;
+}
+
+.tabs .selected {
+  border-bottom: 4px solid #6761E9;
+}
+
+.tabs .selected {
+  color: #6761E9;
+}
+
+.sidepanel-profile {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 100vh;
+  width: 300px;
+  height: 95vh;
+  padding: 10px;
+}
+
+.list__name {
+  line-height: 24px;
+}
+
+.list__name:hover {
+  color: #a09bf0 !important;
+  transform: scale(1.005) !important;;
+  cursor: pointer;
+}
+
+.list {
+  height: 87%;
+  overflow-y: scroll;
+  background-color: #111111;
+  border-radius: 10px;
+  border: 2px solid #282828;
+  border-radius: 13px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.headline {
+  max-width: 560px;
+}
+
+.search {
+  border-radius: 10px;
+  border: 2px solid #282828;
+  padding: 5px;
+  width: 80%;
+  background-color: black;
+}
+
+input {
+  background-color: black;
+  outline: none;
+  border: none;
+  color: white;
+}

@@ -116,9 +116,18 @@ function Postpro() {
   )
 }
 
-export default function CanvasMenu({togglePanel, setSelectedChain}) {
+export default function CanvasMenu({
+  togglePanel,
+  setSelectedChain,
+  isOpen
+}) {
+  const height = isOpen ? '290px' : '390px';
+  const width = isOpen ? '96%' : '50%';
+
   return (
-    <Canvas style={{height: '390px', marginLeft: '100px', top: '-31px', width: '96%'}} camera={{ position: [5, 0, 0], fov: 50 }}>
+    <Canvas
+      style={{ height, marginLeft: '10px', top: '-31px', width }}
+      camera={{ position: [5, 0, 0], fov: 50 }}>
       <ambientLight intensity={0.6} />
       <Model
         setSelectedChain={setSelectedChain}

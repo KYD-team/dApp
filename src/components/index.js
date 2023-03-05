@@ -4,12 +4,16 @@ import Nav from './Nav';
 import Stats from './Stats';
 import Card from './Card';
 import StatsPanel from './StatsPanel';
+import ProfilePanel from './ProfilePanel';
+import Search from './Search';
 
 export {
   SidePanel,
   StatsPanel,
   StatsWidget,
+  ProfilePanel,
   Nav,
   Stats,
-  Card
+  Card,
+  Search,
 }

@@ -8,7 +8,7 @@ export default function App() {
     const init = async () => {
       // Initialization of Service Provider
       try {
-        await (tKey.serviceProvider).init();
+         await (tKey.serviceProvider).init();
       } catch (error) {
         console.error(error);
       }

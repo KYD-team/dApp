@@ -28,15 +28,14 @@ function App() {
           },
           web3AuthNetwork: 'testnet',
         })
-        console.log('web3auth')
-        console.log(web3auth)
+
         const openloginAdapter = new OpenloginAdapter({
           adapterSettings: {
             uxMode: 'popup',
             loginConfig: {
               jwt: {
                 verifier: 'kyd-github-verifier',
-                typeOfLogin: 'github',
+                typeOfLogin: 'jwt',
                 clientId: '0GJzjeCXVWVhXKZsPfuJEOjPWdELdbFc',
               },
             },

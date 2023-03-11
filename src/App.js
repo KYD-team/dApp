@@ -15,6 +15,7 @@ const clientId = 'BPWk1UaQufdtH_nG78pGGKME6nvzERI7r4s9VgoXKBDznlQbfPOZB28iyv4Dc2
 
 function App() {
   const [web3auth, setWeb3auth] = useState(null)
+  const [isReady, setIsReady] = useState(false)
   const [provider, setProvider] = useState(null)
 
   useEffect(() => {
@@ -45,7 +46,12 @@ function App() {
         setWeb3auth(web3auth)
 
         await web3auth.init()
+        setIsReady(true)
+        console.log("initialized")
         if (web3auth.provider) {
+          console.log("provider")
+          console.log(web3auth.provider)
+          console.log("----")
           setProvider(web3auth.provider)
         }
       } catch (error) {
@@ -112,9 +118,14 @@ function App() {
   return (
     <div className="app">
       <div className="connect">
-        {!provider && (
+        {!isReady && (
+          <button className="card">
+            Loading auth..
+          </button>
+        )}
+        {!provider && isReady && (
           <button onClick={login} className="card">
-            Connect With Github
+            Auth With Github
           </button>
         )}
         {provider && (

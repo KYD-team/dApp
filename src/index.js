@@ -12,8 +12,7 @@ dotenv.config()
 const httpLink = new HttpLink({ uri: 'https://api.github.com/graphql' })
 
 const authLink = setContext((_, { headers }) => {
-  //const token = process.env.REACT_APP_GITHUB_TOKEN
-  const token = "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";
+  const token = process.env.REACT_APP_GITHUB_TOKEN
 
   return {
     headers: {
